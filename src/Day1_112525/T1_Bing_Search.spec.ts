@@ -29,3 +29,4 @@ test('Capture search number', async () => {
     let resultsArray = searchResults.split('')
     console.log('Results Array: ', resultsArray [1])
 })//end of test 2
+//end of file

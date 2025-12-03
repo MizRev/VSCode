@@ -25,6 +25,7 @@ test('forgotPasswordTest', async async => {
 
     //click forgot password
     await page.locator("[text()='Forgot Password ']").click()
+    //nenter email address
     
     
 
