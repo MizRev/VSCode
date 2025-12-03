@@ -1,0 +1,31 @@
+import { Page, test } from '@playwright/test';
+
+//initialize page variable for browser
+let page: Page
+let value: string //just an example
+let integer: number //just an example
+
+test.beforeAll(async ({ browser }) => {
+    //create a new page instance
+    page = await browser.newPage ()
+})
+
+test('forgotPasswordTest', async async => {
+    
+    //navigate to Northfield.com home page
+    await page.goto('https://www.enorthfield.com')
+
+    //click on login button
+    await page.locator("[@class='dropdownMenu']").click()
+
+    const [newPage] = await Promise.all ([
+        context.waitForEvent ('page'),
+        //click on forgot password link
+        page.click('[text()="Forgot Password "]')
+
+    //click forgot password
+    await page.locator("[text()='Forgot Password ']").click()
+    
+    
+
+})//end of test
