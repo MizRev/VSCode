@@ -10,9 +10,10 @@
     "bingTestLoop": "npx playwright test src/Day2_120125/T2_Bing_Search_Loop.spec.ts --headed --workers=1 --project=chrome --reporter=html",
     "bingTestCB": "npx playwright test src/Day1_112525/T1_Bing_Search.spec.ts --headed --workers=1 --project=chrome --project=firefox --project=safari --reporter=html",
     "uspsParallel": "npx playwright test src/Day3_120225/T1_USPS_Multiple_Tests.spec.ts --headed --workers=2 --project=chrome --reporter=html",
-    "uspsParallelCB": "npx playwright test src/Day3_120225/T1_USPS_Multiple_Tests.spec.ts --headed --workers=4 --project=chrome --project=firefox --reporter=html",
-    "forgotPasswordNFB": "npx playwright test src/NorthfieldBank/T1_Forgot_Password.spec.ts --headed --workers=1 --project=chrome --reporter=html",
-    "weightWatchersTest": "npx playwright test src/Action_Item/Weight_Watchers.spec.ts --headed --workers=1 --project=chrome --reporter=html"
+    "uspsParallelCB": "npx playwright test src/Day3_120225/T1_USPS_Multiple_Tests.spec.ts --headed --workers=4 --project=chrome --project=safari --reporter=html",
+    "forgotPasswordNFB": "npx playwright test src/NorthfieldBank/T1_Forgot_Password.spec.ts --headed --workers=1 --project=chrome--reporter=html",
+    "weightWatchersTestCB": "npx playwright test src/Action_Item/Weight_Watchers.spec.ts --headed --workers=6 --project=chrome --project=safari --project=firefox --reporter=html",
+    "bingReuseable": "npx playwright test src/Day4_120825/bing_search_reuseable.spec.ts --headed --workers=1 --project=chrome  --reporter=html"
 
   
   },
