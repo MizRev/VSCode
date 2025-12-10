@@ -14,7 +14,8 @@
     "forgotPasswordNFB": "npx playwright test src/NorthfieldBank/T1_Forgot_Password.spec.ts --headed --workers=1 --project=chrome--reporter=html",
     "weightWatchersTestCB": "npx playwright test src/Action_Item/Weight_Watchers.spec.ts --headed --workers=6 --project=chrome --project=safari --project=firefox --reporter=html",
     "bingReusable": "npx playwright test src/Day4_120825/bing_search_reuseable.spec.ts --workers=1 --project=chrome  --reporter=html",
-    "allTests": "npx playwright test src/*.spec.ts --workers=1 --project=chrome  --reporter=html"
+    "allTests": "npx playwright test src/*.spec.ts --workers=1 --project=chrome  --reporter=html",
+    "playwrightAI02": "npx playwright test --grep @ai src/* --workers=1 --project=chrome --reporter=html"
 
 
   

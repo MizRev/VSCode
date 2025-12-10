@@ -42,8 +42,9 @@ export async function getTextByIndex(page: Page, locator: string, index: number,
     return result;
 }//end of get text by index method
 
+
 //method to hover on unique element
-export async function hover(page: Page, locator: string, elementName: string) {
+export async function mousehover(page: Page, locator: string, elementName: string) {
     console.log("Hovering on " + elementName);
     await page.locator(locator).hover();
 }//end of hover method
@@ -54,10 +55,20 @@ export async function hoverByIndex(page: Page, locator: string, index: number, e
     await page.locator(locator).nth(index).hover();
 }//end of hover by index method
 
+//method to scroll by element
+export async function scrollToElement(page: Page, locator: string, elementName: string) {
+    console.log("Scrolling to " + elementName);
+    await page.locator(locator).scrollIntoViewIfNeeded();
+}//end of scroll to element method
+
 //method to select drop down by visible text on unique element
 export async function selectDropDown(page: Page, locator: string, visibleText: string, elementName: string) {
     console.log("Selecting " + visibleText + " from " + elementName);
     await page.locator(locator).selectOption({ label: visibleText });
 }//end of select drop down method
 
-
+//method to scroll by pixels using mousewheel
+export async function scrollByPixels(page: Page, deltaX: number, deltaY: number) {
+    console.log("Scrolling " + " by mouse wheel: (" + deltaX + ", " + deltaY + ")");
+    await page.mouse.wheel(deltaX, deltaY);
+}//end of scroll by mousewheel method
