@@ -72,3 +72,30 @@ export async function scrollByPixels(page: Page, deltaX: number, deltaY: number)
     console.log("Scrolling " + " by mouse wheel: (" + deltaX + ", " + deltaY + ")");
     await page.mouse.wheel(deltaX, deltaY);
 }//end of scroll by mousewheel method
+
+export async function tabByClick(page: Page, locator: string, elementName: string) {
+    console.log("Clicking on " + elementName + " and waiting for new tab");
+    const [newPage] = await Promise.all([
+        page.context().waitForEvent('page'),
+        page.locator(locator).click()
+    ]);
+    await newPage.waitForLoadState();
+    return newPage;
+}//end of tabByClick
+
+//method to switch to tabs
+/*export async function switchToTab(page: Page, index: number) {
+    console.log("Switching to tab index ");
+    const pages = page.context().pages();
+    if (index < pages.length) {
+        const tab = pages[index];
+        await tab.bringToFront();
+        return tab;
+
+    } else {
+        console.log("Tab index out of range");
+        return null;
+    }
+    
+}//end of switch to tabs method */
+

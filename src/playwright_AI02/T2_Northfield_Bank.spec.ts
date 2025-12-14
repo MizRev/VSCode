@@ -1,5 +1,5 @@
 import { Page, test } from '@playwright/test';
-import {click, clickByIndex, getTextByIndex, typeByIndex } from '../Reusable_Actions';
+import {click, clickByIndex, getTextByIndex, switchToTab, tabByClick, type, typeByIndex } from '../Reusable_Actions';
 
 test('forgotPasswordTest @ai', async ({ page })=> {
 
@@ -9,13 +9,12 @@ test('forgotPasswordTest @ai', async ({ page })=> {
     //click on the login button
     await clickByIndex(page, 'text=Login', 1, 'Login Button');
 
-    //click on the forgot password linknp
-    await click(page, '//*[text()="Forgot Password "]', 'Forgot Password Link');
+    //wait a few seconds
+    await page.waitForTimeout(5000);
 
-    //swith to new pasword recovery tab
-    let NFB = await page.context().waitForEvent('page');
-    await NFB.waitForLoadState();
-
+    //Switch to tab
+    let NFB = await tabByClick(page, '//*[text()="Forgot Password "]', 'Forgot Password Link');
+   
     //wait a few seconds
     await NFB.waitForTimeout(2000);
     
@@ -27,6 +26,6 @@ test('forgotPasswordTest @ai', async ({ page })=> {
 
     //capture error message
     let errorMesssage = await getTextByIndex(NFB, '[type="error"]', 0, 'Error Message');
-    console.log('Error Message: ', errorMesssage);
+    console.log('\n\nError Message: ', errorMesssage);
     
 });

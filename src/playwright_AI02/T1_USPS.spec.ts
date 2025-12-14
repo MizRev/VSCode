@@ -42,6 +42,6 @@ test('Capture fox stamp cart @ai', async ({ page }) => {
 
     //getText from stamp information under item and print
     let stampInfo = await getText(page, '[class="item-wrapper"]', 'Stamp information');
-    console.log('stampInfo:', stampInfo);
+    console.log('\n\nYour updated stamp information is:', stampInfo);
 
 });//end of stamp cart test

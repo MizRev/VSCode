@@ -30,6 +30,10 @@ export default defineConfig({
     // baseURL: 'http://localhost:3000',
 
     actionTimeout: 15000, //your time limit
+
+    video: 'on', // records video for each test
+    screenshot: 'only-on-failure', // takes screenshot only if test fails
+    
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
   },
